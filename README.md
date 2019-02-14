@@ -1,2 +1,2 @@
-# docker-ikaros
+# Docker-ikaros
 Ikaros over Docker
