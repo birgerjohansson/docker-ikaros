@@ -8,4 +8,4 @@ RUN apt-get update \
 && git clone http://github.com/ikaros-project/ikaros.git
 
 WORKDIR /ikaros/Build
-RUN cmake .. && make -j8
+RUN cmake -DCMAKE_BUILD_TYPE=Release .. && make && rm -rf /ikaros/Build/*
