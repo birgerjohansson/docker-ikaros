@@ -5,7 +5,7 @@ RUN apt-get update \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
 && git lfs install \
-&& git clone http://github.com/ikaros-project/ikaros.git
+&& git clone https://github.com/ikaros-project/ikaros.git
 
 WORKDIR /ikaros/Build
 RUN git pull && cmake -DCMAKE_BUILD_TYPE=Release .. && make && rm -rf /ikaros/Build/*
