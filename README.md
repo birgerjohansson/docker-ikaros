@@ -8,5 +8,5 @@ docker pull birgerjohansson/ikaros
 docker build -t ikaros:latest github.com/birgerjohansson/docker-ikaros
 
 ## Run
-docker run -i -t ikaros /bin/bash
+docker run -i -t -p 8000:8000 birgerjohansson/ikaros /bin/bash
 
