@@ -1,7 +1,9 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
+
+ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
-&& apt-get install cmake g++ libjpeg-turbo8-dev libgsl0-dev libpng-dev libblas-dev curl libavcodec-dev libavformat-dev libswscale-dev libavdevice-dev git git-lfs -y \ 
+&& apt-get install cmake g++ libjpeg-turbo8-dev libgsl0-dev libpng-dev libblas-dev curl git git-lfs -y \ 
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
 && git lfs install \
@@ -9,3 +11,4 @@ RUN apt-get update \
 
 WORKDIR /ikaros/Build
 RUN git pull && cmake -DCMAKE_BUILD_TYPE=Release .. && make && rm -rf /ikaros/Build/*
+ENTRYPOINT ["/bin/bash"]
